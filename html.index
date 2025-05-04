@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Teachers' Day</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Happy Teachers' Day!</h1>
+        <h2>Celebrating IT Educators</h2>
+    </header>
+    <main>
+        <p>Thank you for inspiring us to innovate, create, and think like programmers!</p>
+        <section id="messages">
+            <h3>Leave a message for your teacher:</h3>
+            <textarea id="messageInput" placeholder="Type your message here..."></textarea>
+            <button onclick="submitMessage()">Submit</button>
+            <ul id="messageList"></ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 - Students of IT</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
