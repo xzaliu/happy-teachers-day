@@ -1,35 +1,66 @@
 body {
-    font-family: 'Courier New', monospace;
-    background-color: #1a1a1a;
-    color: #00ff00;
-    text-align: center;
+  margin: 0;
+  padding: 0;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #0f0f0f;
+  color: #00ff88;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-header {
-    padding: 20px;
-    background: linear-gradient(90deg, #0033cc, #00ccff);
+.terminal {
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 700px;
+  box-shadow: 0 0 20px #00ff88;
 }
 
-textarea {
-    width: 60%;
-    height: 100px;
-    background: #000;
-    color: #00ff00;
-    border: 1px solid #00ff00;
+.header {
+  background-color: #2e2e2e;
+  padding: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: flex;
+  align-items: center;
 }
 
-button {
-    background: #00ccff;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
+.dot {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+  display: inline-block;
 }
 
-button:hover {
-    background: #0033cc;
+.red { background-color: #ff605c; }
+.yellow { background-color: #ffbd44; }
+.green { background-color: #00ca56; }
+
+.title {
+  color: #aaa;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-footer {
-    margin-top: 20px;
-    font-size: 0.8em;
+.content {
+  padding: 20px;
+}
+
+.prompt {
+  color: #00ff88;
+}
+
+.message {
+  margin-top: 10px;
+  color: #ffffff;
+  animation: fadeIn 2s ease-in-out;
+  line-height: 1.6;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
