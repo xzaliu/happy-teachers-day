@@ -9,27 +9,34 @@
       box-sizing: border-box;
     }
 
-    body {
+    html, body {
       margin: 0;
-      background: radial-gradient(#0f0f0f, #000);
+      padding: 0;
       font-family: 'Courier New', monospace;
+      height: 100%;
+      overflow: hidden;
+      background: black;
       color: #00ffcc;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 20px;
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
     }
 
     .terminal-box {
-      background-color: #111;
+      background-color: #111a;
       border: 2px solid #00ffcc;
       border-radius: 15px;
-      width: 100%;
+      width: 90%;
       max-width: 800px;
       padding: 20px 30px;
       box-shadow: 0 0 25px #00ffcc88;
+      margin: 50px auto;
       animation: fadeIn 1.5s ease;
+      backdrop-filter: blur(6px);
     }
 
     .terminal-header {
@@ -100,6 +107,8 @@
   </style>
 </head>
 <body>
+  <canvas id="matrix"></canvas>
+
   <div class="terminal-box">
     <div class="terminal-header">
       <div class="dot red"></div>
@@ -108,19 +117,57 @@
     </div>
     <h1>💻 Happy Teacher's Day 💡</h1>
     <div class="code">
-      <p><span class="highlight">student@life:</span>~$ echo "Thank you, Professor!"</p>
-      <p><span class="highlight">system:</span> Processing appreciation message...</p>
-      <p><span class="highlight">output:</span> 💾 Dear Teacher,</p>
-      <p>
-        You taught us to code, debug, and think logically — but more importantly, you taught us to never give up. <br>
-        You turned complex syntax into simple solutions, and made every class feel like a journey through tech.
+      <p><span class="highlight">$</span> echo "Happy Teacher's Day!"</p>
+      <p><br>
+        Happy Teacher's Day to the best IT mentor ever! 💻👨‍🏫<br><br>
+        Your passion for technology and teaching has inspired us beyond code. <br>
+        Thank you for debugging our minds and compiling our futures. 🧠✨<br><br>
+        - With appreciation from your student,<br>
+        <span class="highlight">Sana Manian 💙</span>
       </p>
-      <p>You're not just a teacher — you're our terminal to the future.</p>
-      <p><span class="highlight">echo</span> "We appreciate you deeply. Happy Teacher's Day! 🖥️💙"</p>
     </div>
     <footer>
-      &copy; 2025 | Designed by a grateful student
+      &copy; 2025 | Designed with ❤️ by Sana Manian
     </footer>
   </div>
+
+  <script>
+    const canvas = document.getElementById("matrix");
+    const ctx = canvas.getContext("2d");
+
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+
+    const letters = "0101010100111011010011";
+    const fontSize = 14;
+    const columns = canvas.width / fontSize;
+    const drops = Array(Math.floor(columns)).fill(1);
+
+    function draw() {
+      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = "#00ff88";
+      ctx.font = fontSize + "px monospace";
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = letters[Math.floor(Math.random() * letters.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    }
+
+    setInterval(draw, 50);
+
+    // Resize canvas when window resizes
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
 </body>
 </html>
