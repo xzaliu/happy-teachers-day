@@ -1,28 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Teachers' Day</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Teacher's Day</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <h1>Happy Teachers' Day!</h1>
-        <h2>Celebrating IT Educators</h2>
-    </header>
-    <main>
-        <p>Thank you for inspiring us to innovate, create, and think like programmers!</p>
-        <section id="messages">
-            <h3>Leave a message for your teacher:</h3>
-            <textarea id="messageInput" placeholder="Type your message here..."></textarea>
-            <button onclick="submitMessage()">Submit</button>
-            <ul id="messageList"></ul>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 - Students of IT</p>
-    </footer>
-    <script src="script.js"></script>
+  <div class="terminal">
+    <div class="header">
+      <span class="dot red"></span>
+      <span class="dot yellow"></span>
+      <span class="dot green"></span>
+      <p class="title">~/teachers_day.sh</p>
+    </div>
+    <div class="content">
+      <p><span class="prompt">$</span> echo "Happy Teacher's Day!"</p>
+      <p class="message">Happy Teacher's Day to the best IT mentor ever! 💻👨‍🏫<br><br>
+      Your passion for technology and teaching has inspired us beyond code. Thank you for debugging our minds and compiling our futures. 🧠✨<br><br>
+      - With appreciation from your students</p>
+    </div>
+  </div>
 </body>
 </html>
