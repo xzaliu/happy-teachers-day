@@ -4,22 +4,123 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Happy Teacher's Day</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: radial-gradient(#0f0f0f, #000);
+      font-family: 'Courier New', monospace;
+      color: #00ffcc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .terminal-box {
+      background-color: #111;
+      border: 2px solid #00ffcc;
+      border-radius: 15px;
+      width: 100%;
+      max-width: 800px;
+      padding: 20px 30px;
+      box-shadow: 0 0 25px #00ffcc88;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .terminal-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .red { background: #ff4b4b; }
+    .yellow { background: #ffd93b; }
+    .green { background: #4cd137; }
+
+    h1 {
+      font-size: 1.8rem;
+      margin: 0 0 20px;
+      color: #00ffe1;
+      text-shadow: 0 0 8px #00ffe1;
+      animation: blink 1.5s step-end infinite;
+    }
+
+    .code {
+      background: #00000044;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 10px;
+      color: #bafff4;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .highlight {
+      color: #00ff88;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0.8;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.3rem;
+      }
+      .code {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div class="terminal">
-    <div class="header">
-      <span class="dot red"></span>
-      <span class="dot yellow"></span>
-      <span class="dot green"></span>
-      <p class="title">~/teachers_day.sh</p>
+  <div class="terminal-box">
+    <div class="terminal-header">
+      <div class="dot red"></div>
+      <div class="dot yellow"></div>
+      <div class="dot green"></div>
     </div>
-    <div class="content">
-      <p><span class="prompt">$</span> echo "Happy Teacher's Day!"</p>
-      <p class="message">Happy Teacher's Day to the best IT mentor ever! 💻👨‍🏫<br><br>
-      Your passion for technology and teaching has inspired us beyond code. Thank you for debugging our minds and compiling our futures. 🧠✨<br><br>
-      - With appreciation from your students</p>
+    <h1>💻 Happy Teacher's Day 💡</h1>
+    <div class="code">
+      <p><span class="highlight">student@life:</span>~$ echo "Thank you, Professor!"</p>
+      <p><span class="highlight">system:</span> Processing appreciation message...</p>
+      <p><span class="highlight">output:</span> 💾 Dear Teacher,</p>
+      <p>
+        You taught us to code, debug, and think logically — but more importantly, you taught us to never give up. <br>
+        You turned complex syntax into simple solutions, and made every class feel like a journey through tech.
+      </p>
+      <p>You're not just a teacher — you're our terminal to the future.</p>
+      <p><span class="highlight">echo</span> "We appreciate you deeply. Happy Teacher's Day! 🖥️💙"</p>
     </div>
+    <footer>
+      &copy; 2025 | Designed by a grateful student
+    </footer>
   </div>
 </body>
 </html>
